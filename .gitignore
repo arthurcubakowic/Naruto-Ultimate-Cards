@@ -59,5 +59,7 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Save file
-/[Aa]ssets/saveFile.*
+/[Aa]ssets/saveFile.json
+/[Aa]ssets/saveFile.json.meta
+
 
