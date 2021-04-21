@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a8d631d73c8b1242955d6e8b39f65cb, type: 3}
+  m_Name: Zabuza Final Torre 1
+  m_EditorClassIdentifier: 
+  nome: Zabuza Momochi
+  descricao: Demonio do Gas Oculto
+  exp: 200
+  arte: {fileID: 21300000, guid: f9232b901c71ae343b2a234b96f90448, type: 3}
+  dano: 300
+  vida: 2500
+  cura: 0
+  multNin: 0
+  multGen: 0
+  multTai: 0
+  probabilidadeHeal: 0

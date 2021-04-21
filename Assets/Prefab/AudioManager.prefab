@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1079080119224659978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1079080119224659976}
+  - component: {fileID: 1079080119224659979}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1079080119224659976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079080119224659978}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 984.6947, y: 537.88837, z: -1374.7069}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1079080119224659979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079080119224659978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062cd25c7940a2842bcc1257569b7a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - nome: Button Sound
+    clip: {fileID: 8300000, guid: 55a8c706e8b2fc640b160719de903c20, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - nome: Select Carta
+    clip: {fileID: 8300000, guid: 0b968402d1fe3c64b9e41912e83a3a5b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - nome: Comeco Torre
+    clip: {fileID: 8300000, guid: 48bd3903ddcb7b14dab92144b6775bab, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - nome: Cura Sound
+    clip: {fileID: 8300000, guid: ab2f300dd17781947a5038a3cb50c948, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - nome: Ataque Sound
+    clip: {fileID: 8300000, guid: 897512b541e0de0469b3a21c80e53046, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - nome: Vitoria Theme
+    clip: {fileID: 8300000, guid: c3f4dedd4e9154d45a3417aaae3875e3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - nome: Inimigo Derrotado
+    clip: {fileID: 8300000, guid: e9247cdc9aa1db54d981e37480fa24e4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - nome: Lose Theme
+    clip: {fileID: 8300000, guid: 8e3fa71850337334eb904e740fd5ce9b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}

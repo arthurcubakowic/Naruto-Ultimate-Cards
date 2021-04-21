@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d706906dd78e93e4f94076199b36400f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - cartaTemplate: {fileID: 2497128246184154644, guid: 07fc09bcc43c90c44864cd67beef3a1f,
+      type: 3}
+  - paiCartas: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

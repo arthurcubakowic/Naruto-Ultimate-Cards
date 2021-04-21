@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2621c9afe274f424f8bb7171f9276695, type: 3}
+  m_Name: Torre 1
+  m_EditorClassIdentifier: 
+  nome: "Pr\xF3logo"
+  imagemTorre: {fileID: 21300000, guid: 80a2b5e40f98098469f8eca4987ee860, type: 3}
+  musicaTema: {fileID: 8300000, guid: 4d9f610a529e75f49aa3799a11168d56, type: 3}
+  musicaBoss: {fileID: 8300000, guid: c474e7b2d86a6ad4ba1b32229cb26342, type: 3}
+  listaTorre:
+  - {fileID: 11400000, guid: 589e7d58378f094449d3678c3a3ef99e, type: 2}
+  - {fileID: 11400000, guid: f06ddfe83891e6c4699d307810214ab1, type: 2}
+  - {fileID: 11400000, guid: 396628891ab390a4bbfa63f587a68c2f, type: 2}
+  - {fileID: 11400000, guid: 9c7459af4816a204a90536e4543ed1e6, type: 2}
+  - {fileID: 11400000, guid: 6e44aa0f2b483b84b9720435fb2400e8, type: 2}
+  - {fileID: 11400000, guid: b9306d561e837c64c8d94c1f13b038d8, type: 2}
+  recompensa: {fileID: 11400000, guid: c91a13b1402338749bc50f35c691e7ff, type: 2}

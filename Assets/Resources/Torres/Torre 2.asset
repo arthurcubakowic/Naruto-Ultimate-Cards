@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2621c9afe274f424f8bb7171f9276695, type: 3}
+  m_Name: Torre 2
+  m_EditorClassIdentifier: 
+  nome: Floresta da Morte
+  imagemTorre: {fileID: 21300000, guid: 5d05c79bbda047140b9c3b7f595bf835, type: 3}
+  musicaTema: {fileID: 8300000, guid: 15c3a0c193785eb41a9501ec58e59a78, type: 3}
+  musicaBoss: {fileID: 8300000, guid: 48f2e7e71e66f974b8cb14b08c3a6589, type: 3}
+  listaTorre:
+  - {fileID: 11400000, guid: 8ffbab14f9c45b5448235550d418cd53, type: 2}
+  - {fileID: 11400000, guid: bc96d8d583565c84d8a546d4616dc604, type: 2}
+  - {fileID: 11400000, guid: b323a58d0422b43458f5e1f812328f1d, type: 2}
+  - {fileID: 11400000, guid: 4273a473abd3e58489b7c794ae978918, type: 2}
+  - {fileID: 11400000, guid: ea6bf18aa767fa041bf7cd81b5474c41, type: 2}
+  - {fileID: 11400000, guid: 25ecbd7a90fc9594baa640fb9fe40f55, type: 2}
+  - {fileID: 11400000, guid: 6162cd2397cb0ca46aa84460ab28c04f, type: 2}
+  - {fileID: 11400000, guid: 4960f9add914d7245bf0920225c3985f, type: 2}
+  recompensa: {fileID: 11400000, guid: 3a79d2407868c5a4bb4d45207180fff9, type: 2}
