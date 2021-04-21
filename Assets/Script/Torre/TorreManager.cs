@@ -110,7 +110,6 @@ public class TorreManager : MonoBehaviour
             {
                 i--;
                 if (i < 0) i = listaTorres.Count - 1;
-                Debug.Log(i);
             }
 
             if (Input.GetKeyDown(KeyCode.Return) && gameObject.GetComponent<TorreManager>().torreSelectEmAndamento)
@@ -119,7 +118,6 @@ public class TorreManager : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("Select Carta");
             }
 
-            Debug.Log("TA PRESO");
 
             torreImage.sprite = listaTorres[i].imagemTorre;
             torreNome.text = listaTorres[i].nome;

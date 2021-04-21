@@ -8,11 +8,11 @@ class GerarTXT : MonoBehaviour
     private void Start()
     {
 
-        DirectoryInfo di = new DirectoryInfo(@"C:/Users/Arthur/Projetos Unity/Farm e Spam Naruto/Assets/Resources/Cartas");
+        DirectoryInfo di = new DirectoryInfo(Application.dataPath + @"/Resources/Cartas");
 
         StreamWriter x;
 
-        string CaminhoNome = "C:/Users/Arthur/Projetos Unity/Farm e Spam Naruto/Assets/Resources/Lista de Cartas.txt";
+        string CaminhoNome = Application.dataPath + "/Resources/Lista de Cartas.txt";
 
         x = File.CreateText(CaminhoNome);
 
