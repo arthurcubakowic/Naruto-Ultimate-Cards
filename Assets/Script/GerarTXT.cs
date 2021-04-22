@@ -1,6 +1,7 @@
 using System.IO;
 using UnityEngine;
 
+// Comentado por: Matheus Carvalho
 class GerarTXT : MonoBehaviour
 {
 

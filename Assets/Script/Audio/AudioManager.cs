@@ -2,9 +2,10 @@ using UnityEngine.Audio;
 using UnityEngine;
 using System;
 
-// baseado de um video do Brackeys
+// Comentado por Nicolas Borges
 public class AudioManager : MonoBehaviour
 {
+    // baseado de um video do Brackeys
     public static AudioManager instance;
 
     public Sound[] sounds;

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
+// Comentado por Gustavo da Silva Oliveira
 public class MenuManager : MonoBehaviour
 {
     public GameObject videoCanvas;
