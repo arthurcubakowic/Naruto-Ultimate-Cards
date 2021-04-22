@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
+// Comentado por: Arthur von Peer Cubakowic
 public class GachaManager : MonoBehaviour
 {
     public static GachaManager instancia; // transforma em singleton
@@ -46,29 +47,36 @@ public class GachaManager : MonoBehaviour
 
     private void Awake()
     {
-        instancia = this; // transforma em singleton
-
-
-
+        if (instancia == null) // transforma em singleton
+            instancia = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 
 
     void Update()
     {
+        // Atualiza a quantidade de Currency mostrada para o jogador, assim como qual currency esta sendo mostrada
         currencyText.text = Inventory.playerData.currency[pagina].ToString();
         rankDaCurrency.text = rank;
 
+        // Esc sai volta a pagina
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             LoadMenuScene();
         }
-
-        if (Input.GetKeyDown(KeyCode.F3))
+        
+        // Essa parte serve para Debugar, mas atrapalha na jogabilidade do jogo
+        /*if (Input.GetKeyDown(KeyCode.F3))
         {
             Inventory.playerData.currency[0] += 10000;
-        }
+        }*/
     }
 
+    // Cria a carta e adiciona ela ao inventario do jogador
     public void LoadNCartas(int n, string rank)
     {
         // Instancia N GameObject's das Cartas que serao sorteadas
@@ -85,6 +93,7 @@ public class GachaManager : MonoBehaviour
         }
     }
 
+    // Instancia a carta (Visual)
     public GameObject CriaCarta(int n, int i, string rank)
     {
         // Instancia o GameObject da Carta que será sorteada
@@ -97,14 +106,18 @@ public class GachaManager : MonoBehaviour
         return novaCarta;
     }
 
+    // Sorteia uma carta de um rank especifico
     public string PegaUmaCartaRank(string rank)
     {
+        // Codigo baseado na aula do jogo de Cartas, porem separa por ';'
         TextAsset t1 = (TextAsset)Resources.Load("Lista de Cartas", typeof(TextAsset));
         string s = t1.text;
         string[] palavras = s.Split(';');
 
+        // transforma o Rank passado (Char) para um numero (Char)
         string localRank = RankToIntString(rank);
 
+        // Cria uma lista com todas as cartas do Rank passado
         List<string> cartasD = new List<string> { };
         foreach (string carta in palavras)
         {
@@ -112,11 +125,14 @@ public class GachaManager : MonoBehaviour
                 cartasD.Add(carta);
         }
 
+        // sorteia um numero dentre todas as cartas de rank passado
         int palavraAleatoria = Random.Range(0, cartasD.Count);
 
+        // retorna a carta sorteado
         return cartasD[palavraAleatoria];
     }
 
+    // recebe um Rank em letras e retorna em caracter
     public string RankToIntString (string rank)
     {
         string intRank;
@@ -149,34 +165,41 @@ public class GachaManager : MonoBehaviour
         return intRank;
     }
 
+    // Destroi o Game Object da carta mostrada na tela
     public void UnloadAllCards()
     {
         for (int i = paiCartas.transform.childCount; i > 0; i--)
             Destroy(paiCartas.transform.GetChild(i - 1).gameObject);
     }
 
+    // Salva o jogo e retorna pro menu
     public void LoadMenuScene()
     {
         Inventory.SaveGame();
         SceneManager.LoadScene("Menu");
     }
-
-    // Metodos de teste
+    
+    // Funcao para chamar a rotina de sortear carta (Ela existe para ser colocada no botao do jogo)
     public void ReedemCarta()
     {
         StartCoroutine(RedeemCarta());
     }
+
+    // Sorteia uma carta e adiciona ao inventario do jogador
     public IEnumerator RedeemCarta()
     {
 
         // Deleta todas as cartas existentes
         UnloadAllCards();
 
+        // Le a pagina que o jogador está para saber qual é o rank da carta que ele deve sortear, se o jogador tiver a currency necessaria para sortear uma
+        // carta ela sera sorteada
         if (Inventory.playerData.currency[pagina] >= n * 300)
         {
             Inventory.playerData.currency[pagina] -= n * 300;
-            LoadNCartas(n, rank);
+            LoadNCartas(n, rank); // essa funcao que ira adicionar a carta ao inventario do jogador, assim como ela que irá mostrar a carta na tela
         }
+        // Caso ele nao tenha currency suficiente, uma mensagem dizendo que ele nao tem dinheiro será mostrada na tela
         else
         {
             Debug.Log("Ryo Insuficiente");
@@ -188,6 +211,7 @@ public class GachaManager : MonoBehaviour
         yield return null;
     }
 
+    // Passa para a pagina de sorteio de um rank a cima
     public void ProximaPagina()
     {
         // Deleta todas as cartas existentes
@@ -201,6 +225,7 @@ public class GachaManager : MonoBehaviour
         AtualizaUI();
     }
 
+    // Volta para a pagina de sorteio de um rank a baixo
     public void PaginaAnterior()
     {
         // Deleta todas as cartas existentes
@@ -214,6 +239,7 @@ public class GachaManager : MonoBehaviour
         AtualizaUI();
     }
 
+    // Atualiza a UI da Cena sempre que troca de pagina
     public void AtualizaUI()
     {
         switch (pagina)
