@@ -18,8 +18,8 @@ MonoBehaviour:
   descricao: "Padr\xE3o"
   tipo: Default
   arte: {fileID: 21300000, guid: 71f2f7fd5c89cdc44a2c8d669bfacf2c, type: 3}
-  poder: 0
+  poder: 1550
   taijutsu: 0
   genjutsu: 0
-  ninjutsuAtk: 0
-  ninjutsuSup: 0
+  ninjutsu: 1550
+  cura: 0

@@ -18,8 +18,8 @@ MonoBehaviour:
   descricao: Defesa Absoluta
   tipo: "Cl\xE1ssico"
   arte: {fileID: 21300000, guid: 6f510f33adfb688458af173e2a3d4f7b, type: 3}
-  poder: 0
+  poder: 2600
   taijutsu: 0
   genjutsu: 0
-  ninjutsuAtk: 0
-  ninjutsuSup: 0
+  ninjutsu: 2600
+  cura: 0

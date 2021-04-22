@@ -18,8 +18,8 @@ MonoBehaviour:
   descricao: Kage Kubi Shibari
   tipo: "Cl\xE1ssico"
   arte: {fileID: 21300000, guid: 432f2ed8617433b4d91bd3da93afe338, type: 3}
-  poder: 0
+  poder: 1600
   taijutsu: 0
   genjutsu: 0
-  ninjutsuAtk: 0
-  ninjutsuSup: 0
+  ninjutsu: 1600
+  cura: 0

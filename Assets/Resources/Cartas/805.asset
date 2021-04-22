@@ -18,8 +18,8 @@ MonoBehaviour:
   descricao: "8 Port\xF5es"
   tipo: Default
   arte: {fileID: 21300000, guid: f615917c1881b5740a74a131554ae463, type: 3}
-  poder: 0
-  taijutsu: 0
+  poder: 5000
+  taijutsu: 5000
   genjutsu: 0
-  ninjutsuAtk: 0
-  ninjutsuSup: 0
+  ninjutsu: 0
+  cura: 0

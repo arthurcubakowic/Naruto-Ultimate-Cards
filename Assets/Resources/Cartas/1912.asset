@@ -18,8 +18,8 @@ MonoBehaviour:
   descricao: Resgate
   tipo: "Cl\xE1ssico"
   arte: {fileID: 21300000, guid: 08fe7d1ba2c9c6f4f9d14bd201dab67b, type: 3}
-  poder: 0
+  poder: 1850
   taijutsu: 0
   genjutsu: 0
-  ninjutsuAtk: 0
-  ninjutsuSup: 0
+  ninjutsu: 1850
+  cura: 0

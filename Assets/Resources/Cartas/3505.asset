@@ -18,8 +18,8 @@ MonoBehaviour:
   descricao: "Maldi\xE7\xE3o Completa"
   tipo: Default
   arte: {fileID: 21300000, guid: 105371ed517a61147b4cb37bdf78c905, type: 3}
-  poder: 0
+  poder: 6000
   taijutsu: 0
   genjutsu: 0
-  ninjutsuAtk: 0
-  ninjutsuSup: 0
+  ninjutsu: 6000
+  cura: 0

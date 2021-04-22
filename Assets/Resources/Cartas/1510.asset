@@ -18,8 +18,8 @@ MonoBehaviour:
   descricao: "Cl\xE1ssico"
   tipo: "Cl\xE1ssico"
   arte: {fileID: 21300000, guid: 19a76b3e12bb7b349af6d59847b52faf, type: 3}
-  poder: 0
-  taijutsu: 0
+  poder: 270
+  taijutsu: 270
   genjutsu: 0
-  ninjutsuAtk: 0
-  ninjutsuSup: 0
+  ninjutsu: 0
+  cura: 0

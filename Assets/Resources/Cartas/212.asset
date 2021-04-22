@@ -18,7 +18,7 @@ MonoBehaviour:
   descricao: Exame Chunin
   tipo: "Cl\xE1ssico"
   arte: {fileID: 21300000, guid: 7a870c77f328f4b4c9ca447dc0035e7e, type: 3}
-  poder: 0
+  poder: 1150
   taijutsu: 0
   genjutsu: 0
   ninjutsu: 1150

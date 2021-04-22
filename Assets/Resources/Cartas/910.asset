@@ -18,8 +18,8 @@ MonoBehaviour:
   descricao: Classico
   tipo: Classico
   arte: {fileID: 21300000, guid: 2c6d14d5f9768de4cb2d6a73cc4c230f, type: 3}
-  poder: 0
-  taijutsu: 0
+  poder: 400
+  taijutsu: 400
   genjutsu: 0
-  ninjutsuAtk: 0
-  ninjutsuSup: 0
+  ninjutsu: 0
+  cura: 0

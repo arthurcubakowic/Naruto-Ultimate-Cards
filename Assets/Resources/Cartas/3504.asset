@@ -18,8 +18,8 @@ MonoBehaviour:
   descricao: "Primeira Transforma\xE7\xE3o"
   tipo: Default
   arte: {fileID: 21300000, guid: de95c539f65e9774fbbe2f9793740f6b, type: 3}
-  poder: 0
-  taijutsu: 0
+  poder: 3500
+  taijutsu: 3500
   genjutsu: 0
-  ninjutsuAtk: 0
-  ninjutsuSup: 0
+  ninjutsu: 0
+  cura: 0

@@ -18,7 +18,7 @@ MonoBehaviour:
   descricao: Sharingan Final
   tipo: "Cl\xE1ssico"
   arte: {fileID: 21300000, guid: 445be10d39de4ab42ac86e949846e0b9, type: 3}
-  poder: 0
+  poder: 3600
   taijutsu: 0
   genjutsu: 0
   ninjutsu: 3600

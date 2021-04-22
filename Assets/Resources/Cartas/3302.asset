@@ -18,8 +18,8 @@ MonoBehaviour:
   descricao: Transformado
   tipo: Default
   arte: {fileID: 21300000, guid: 75300309314a49a4593c815689b3a193, type: 3}
-  poder: 0
+  poder: 1500
   taijutsu: 0
   genjutsu: 0
-  ninjutsuAtk: 0
-  ninjutsuSup: 0
+  ninjutsu: 1500
+  cura: 0
