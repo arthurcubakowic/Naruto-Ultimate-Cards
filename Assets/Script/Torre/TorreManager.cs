@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 
 // Bugs conhecidos: na formacao de time é possivel escolher a mesma carta 4 vezes, o ideal seria escolher apenas 1 de cada carta
+// Comentado por: Artur von Peer Cubakowic
 public class TorreManager : MonoBehaviour
 {
     [Header("Geral")]
