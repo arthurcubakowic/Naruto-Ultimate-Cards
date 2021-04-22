@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        if (instance == null)
+        if (instance == null) // singleton
             instance = this;
         else
         {
@@ -19,8 +19,10 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        // faz com que o AudioManager seja passado para todas as Cenas
         DontDestroyOnLoad(gameObject);
 
+        // Adiciona o Source no gameObject para cada som guardado no gameObject
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -32,6 +34,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    // Toca qualquer som com o nome indicado
     public void Play (string nome)
     {
         Sound s = Array.Find(sounds, sound => sound.nome == nome);
@@ -44,6 +47,7 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+    // Unica coisa de nossa autoria, pausa qualquer som que esteja tocando
     public void Stop(string nome)
     {
         Sound s = Array.Find(sounds, sound => sound.nome == nome);
