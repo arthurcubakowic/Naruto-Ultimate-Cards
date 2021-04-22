@@ -3,9 +3,11 @@ using UnityEngine;
 using System.IO;
 using System;
 
+
+// Comentado por: Arthur von Peer Cubakowic
 public class Inventory : MonoBehaviour
 {
-    public static Inventory instancia; // transforma em singleton
+    public static Inventory instancia;                 // transforma em singleton
 
     public static InventoryData playerData;            // TRANSFORMAR ESSA VARIAVEL EM GLOBAL
 
@@ -19,28 +21,30 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
-        instancia = this; // transforma em singleton
-
+        if (instancia == null) // transforma em singleton
+            instancia = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 
     private void Update()
     {
-        // DELETAR
-        //quantidadeCartas = playerData.inventarioCartas.Count;
-        //playerDataDELETAR = playerData;
-
-        // DELETAR
-
+        // Salva o jogo com F5
         if (Input.GetKeyDown(KeyCode.F5))
         {
             SaveGame();
         }
 
+        // Carrega o jogo com F9
         if (Input.GetKeyDown(KeyCode.F9))
         {
             LoadGame();
         }
 
+        // Reseta o jogo inteiro com F1
         if (Input.GetKeyDown(KeyCode.F1))
         {
             playerData.inventarioCartas.Clear();
@@ -65,9 +69,12 @@ public class Inventory : MonoBehaviour
 
     public static void AddCarta(Card carta)
     {
+        // Debugado para ajudar na criacao do jogo e garantir sua funcionalidade plena
         Debug.Log(playerData);
         Debug.Log(playerData.inventarioCartas[0]);
         Debug.Log(playerData.inventarioCartas.Count);
+
+        // para cada carta repetida adiciona Currency ao jogador (nas primeiras versoes do jogo a currency chamava Ryo, agora é so Currency)
         foreach (InventoryDataCarta obj in playerData.inventarioCartas)
         {
             if (obj.carta == carta)
@@ -77,6 +84,7 @@ public class Inventory : MonoBehaviour
             }
         }
 
+        // Instancia uma nova DataCarta, ou seja uma carta com o sistema de leveling
         InventoryDataCarta data = new InventoryDataCarta
         {
             carta = carta,
@@ -84,9 +92,11 @@ public class Inventory : MonoBehaviour
             experiencia = 0
         };
 
+        // Adiciona a carta ao inventario do jogador
         playerData.inventarioCartas.Add(data);
     }
 
+    // Adiciona currency ao jogador para a carta repetida, vale citar que a currency recebida depende do Rank da carta repetida
     public static void ConverteCartaEmRyo (Card carta)
     {
 
@@ -113,6 +123,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    // funcao global que chama o salva o jogo
     public static void SaveGame()
     {
         SaveSystem.SalvarInventario();
@@ -120,6 +131,8 @@ public class Inventory : MonoBehaviour
         Debug.Log("Jogo Salvo");
     }
 
+
+    // funcao global que chama o carrega o jogo
     public static void LoadGame()
     {
         playerData = SaveSystem.CarregarInventario();
@@ -127,20 +140,22 @@ public class Inventory : MonoBehaviour
         Debug.Log("Jogo Carregado");
     }
 
+    // Classe feita para o sistema de save
     public static class SaveSystem
     {
-
+        // Funcao que transforma o inventario em Json e salva ele no arquivo SaveFile
         public static void SalvarInventario()
         {
-
             string json = JsonUtility.ToJson(playerData);
 
             File.WriteAllText(Application.dataPath + "/saveFile.json", json);
         }
 
+        // funcao que le o Json com o save do jogador e transfere ele para o Data do jogo rodando
+        // Se o sabe nao existir ele cria um save zerado, ou seja, com 4 cartas e sem currency 
         public static InventoryData CarregarInventario()
         {
-
+            // carrega jogo
             if (File.Exists(Application.dataPath + "/saveFile.json"))
             {
                 string json = File.ReadAllText(Application.dataPath + "/saveFile.json");
@@ -148,6 +163,8 @@ public class Inventory : MonoBehaviour
 
                 return data;
             }
+
+            // cria um novo
             else
             {
                 File.Create(Application.dataPath + "/saveFile.json");
@@ -174,8 +191,6 @@ public class Inventory : MonoBehaviour
                 AddCarta(Resources.Load<Card>("Cartas/210"));
                 AddCarta(Resources.Load<Card>("Cartas/310"));
                 AddCarta(Resources.Load<Card>("Cartas/2301"));
-                
-                //Debug.LogError("Save Criado");
 
                 return playerData;
             }
@@ -185,6 +200,7 @@ public class Inventory : MonoBehaviour
     }
 }
 
+// Classe que salva a currency do jogador, Ryo é inutil por enquanto, pois o sistema de equipamentos ainda nao foi implementado
 [System.Serializable]
 public class InventoryData
 {
@@ -194,6 +210,7 @@ public class InventoryData
     public int ryo;
 }
 
+// Classe que salva o progresso de cada carta, referente ao leveling
 [System.Serializable]
 public class InventoryDataCarta : IComparable<InventoryDataCarta>
 {
@@ -201,6 +218,7 @@ public class InventoryDataCarta : IComparable<InventoryDataCarta>
     public int lvl;
     public int experiencia;
 
+    // essa parte serve para que essa classe possa fazer uma ordenacao por ID
     public int CompareTo(InventoryDataCarta other)
     {
         if (carta.idCard > other.carta.idCard)
@@ -211,10 +229,12 @@ public class InventoryDataCarta : IComparable<InventoryDataCarta>
             return 0;
     }
 
+    // Adiciona XP para a carta e evolui ela
     public void AdicionaXP(int exp)
     {
         experiencia += exp;
 
+        // A experiancia é zerada ao evoluir pois houve um erro nas tentativas de fazer o XP excedente ser mantido
         if (experiencia >= 100 * Math.Pow(1.08f, lvl))
         {
             //experiencia -= (int) (100 * Math.Pow(1.08f, lvl));
