@@ -560,7 +560,7 @@ MonoBehaviour:
   nome: {fileID: 275954280912213700}
   rank: {fileID: 5712451474280414621}
   tipo: {fileID: 4155946603566804740}
-  discricao: {fileID: 1936484327029821538}
+  descricao: {fileID: 1936484327029821538}
   poder: {fileID: 6037199379856442447}
   taijutsu: {fileID: 6234888605441495543}
   genjutsu: {fileID: 4060779266077032972}

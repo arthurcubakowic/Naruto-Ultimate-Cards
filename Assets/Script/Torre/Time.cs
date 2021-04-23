@@ -1,8 +1,18 @@
-﻿using UnityEngine;
+﻿/// <summary>
+/// Projeto Final Programação Baseada em Componentes para Jogos
+/// Prof Dr. Mario Minami
+/// Alunos: Arthur Cubakowic, Gustavo da Silva, Matheus Mergulhão, Nicolas Borges
+/// Data: 22/04/2021
+/// Versão do Unity: 2020.3.0f1
+/// </summary>
+
+using UnityEngine;
+
+//Comentarios feitos por: Nicolas Borges
 
 public class Time : MonoBehaviour
 {
-
+    //cria as variáveis dos membros da equipe
     public TimeMember capitao;
     public TimeMember membro1;
     public TimeMember membro2;
@@ -10,6 +20,7 @@ public class Time : MonoBehaviour
 
     public int i;
 
+    //cria as variáveis do poder da equipe
     public int poderT;
     public int taijutsuT;
     public int genjutsuT;
@@ -21,8 +32,10 @@ public class Time : MonoBehaviour
         i = 1;
     }
 
+    //Cria a equipe 
     public void MontaTime()
     {
+        //calcula o poder de cada membro da equipe
         CalculaAtributosMembro(capitao);
         CalculaAtributosMembro(membro1);
         CalculaAtributosMembro(membro2);
@@ -33,6 +46,7 @@ public class Time : MonoBehaviour
         EquipaMembro(membro2);
         EquipaMembro(membro3);*/
 
+        //calcula o poder total da equipe, somando o poder de cada membro
         poderT       = (int) (capitao.poderRelativo + membro1.poderRelativo + membro2.poderRelativo + membro3.poderRelativo);
         taijutsuT    = (int) (capitao.taijutsuRelativo + membro1.taijutsuRelativo + membro2.taijutsuRelativo + membro3.taijutsuRelativo);
         genjutsuT    = (int) (capitao.genjutsuRelativo + membro1.genjutsuRelativo + membro2.genjutsuRelativo + membro3.genjutsuRelativo);
@@ -40,6 +54,7 @@ public class Time : MonoBehaviour
         ninjutsuSupT = (int) (capitao.ninjutsuSupRelativo + membro1.ninjutsuSupRelativo + membro2.ninjutsuSupRelativo + membro3.ninjutsuSupRelativo);
     }
 
+    //calcula o poder de cada membro, nas diferentes categorias 
     public void CalculaAtributosMembro(TimeMember membro)
     {
         membro.ninjutsuSupRelativo = membro.dataCarta.carta.cura + membro.dataCarta.carta.cura * membro.dataCarta.lvl / 25;
@@ -51,6 +66,7 @@ public class Time : MonoBehaviour
 
     }
 
+    //atualiza do membro da equipe de acordo com o equipamento
     public void EquipaMembro(TimeMember membro)
     {
 
@@ -71,12 +87,15 @@ public class Time : MonoBehaviour
 
     }
 
+    //define o capitão
     public void MontaCapitao(InventoryDataCarta dataCarta, Equipamento equip)
     {
         capitao.dataCarta = dataCarta;
         capitao.equip = equip;
     }
 
+
+    //define os membros da equipe
     public void MontaMembro(InventoryDataCarta dataCarta, Equipamento equip)
     {
         switch (i)
@@ -104,6 +123,8 @@ public class Time : MonoBehaviour
 }
 
 [System.Serializable]
+
+//instancia os atributos do membro do time
 public class TimeMember
 {
     public InventoryDataCarta dataCarta;

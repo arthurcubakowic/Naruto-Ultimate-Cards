@@ -1,16 +1,26 @@
-﻿using UnityEngine;
+﻿/// <summary>
+/// Projeto Final Programação Baseada em Componentes para Jogos
+/// Prof Dr. Mario Minami
+/// Alunos: Arthur Cubakowic, Gustavo da Silva, Matheus Mergulhão, Nicolas Borges
+/// Data: 22/04/2021
+/// Versão do Unity: 2020.3.0f1
+/// </summary>
+
+using UnityEngine;
 using UnityEngine.UI;
+
+//Comentarios feitos por: Gustavo da Silva Oliveira
 
 public class InventarioCenaManager : MonoBehaviour
 {
-    public GameObject templateCarta;
+    public GameObject templateCarta;        //game object do template da carta
 
-    public GameObject botaoCartas;
-    public GameObject interfaceCartas;
+    public GameObject botaoCartas;          //game object do botão das cartas
+    public GameObject interfaceCartas;      //game object da interface das cartas
 
 
     public int i;
-    public bool mostrandoInventario;
+    public bool mostrandoInventario;        //booleano que indica se o inventário está sendo mostrado
 
     private void Awake()
     {
@@ -18,20 +28,22 @@ public class InventarioCenaManager : MonoBehaviour
         i = 0;
     }
 
+    //visualizar as cartas do inventário
     public void InventarioCartas()
     {
         mostrandoInventario = true;
 
-        botaoCartas.SetActive(false);
-        interfaceCartas.SetActive(true);
+        botaoCartas.SetActive(false);           //some com o botão para visualizar as cartas
+        interfaceCartas.SetActive(true);        //mostra as cartas contidas no inventário
 
-        Inventory.playerData.inventarioCartas.Sort();
-        InstanciaCarta(Inventory.playerData.inventarioCartas[i]);
+        Inventory.playerData.inventarioCartas.Sort();               //embaralha as cartas do invenrário
+        InstanciaCarta(Inventory.playerData.inventarioCartas[i]);   //define a carta que está sendo mostrada
 
-        AtualizaLevel();
+        AtualizaLevel();           //chama a função atualiza level
 
     }
 
+    //
     public void FecharInventarioCartas()
     {
         Destroy(GameObject.Find("Carta"));

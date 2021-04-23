@@ -280,17 +280,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carta: {fileID: 0}
+  dataCarta:
+    carta: {fileID: 0}
+    lvl: 0
+    experiencia: 0
   idCarta: 0
   arte: {fileID: 2946970956012852589}
   nome: {fileID: 2820858152263900968}
   rank: {fileID: 4128340757603223979}
   tipo: {fileID: 5737734604060744498}
-  discricao: {fileID: 7841789969515390036}
+  descricao: {fileID: 7841789969515390036}
   poder: {fileID: 2721322662929084537}
   taijutsu: {fileID: 2820858152263900968}
   genjutsu: {fileID: 0}
-  ninjutsuAtk: {fileID: 0}
-  ninjutsuSup: {fileID: 0}
+  ninjutsu: {fileID: 0}
+  cura: {fileID: 0}
 --- !u!1 &2820858152263900950
 GameObject:
   m_ObjectHideFlags: 0
