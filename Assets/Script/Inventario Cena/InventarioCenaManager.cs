@@ -20,13 +20,14 @@ public class InventarioCenaManager : MonoBehaviour
 
     // Variaveis locais
     public int i;
-    public bool mostrandoInventario;
+    public bool mostrandoInventario;        //booleano que indica se o inventário está sendo mostrado
 
     private void Awake()
     {
         i = 0;
     }
 
+    //visualizar as cartas do inventário
     public void InventarioCartas()
     {
         // Define que o inventario está sendo mostrado na UI

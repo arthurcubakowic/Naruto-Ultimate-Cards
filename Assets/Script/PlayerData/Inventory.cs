@@ -1,4 +1,12 @@
-﻿using System.Collections.Generic;
+﻿/// <summary>
+/// Projeto Final Programação Baseada em Componentes para Jogos
+/// Prof Dr. Mario Minami
+/// Alunos: Arthur Cubakowic, Gustavo da Silva, Matheus Mergulhão, Nicolas Borges
+/// Data: 22/04/2021
+/// Versão do Unity: 2020.3.0f1
+/// </summary>
+
+using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System;
@@ -191,8 +199,6 @@ public class Inventory : MonoBehaviour
                 AddCarta(Resources.Load<Card>("Cartas/210"));
                 AddCarta(Resources.Load<Card>("Cartas/310"));
                 AddCarta(Resources.Load<Card>("Cartas/2301"));
-
-                SaveGame();
 
                 return playerData;
             }
