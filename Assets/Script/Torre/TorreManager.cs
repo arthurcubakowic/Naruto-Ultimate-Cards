@@ -36,8 +36,11 @@ public class TorreManager : MonoBehaviour
 
     // Torre Select UI
     public GameObject torreSelect;
+    public GameObject torreSelectBotoes;
+    public GameObject cartaSelectBotoes;
     public Image torreImage;
     public Text torreNome;
+
 
     [Header("Stats")]
     // Inimigo Stats
@@ -51,6 +54,8 @@ public class TorreManager : MonoBehaviour
     // Variaveis locais, algumas usadas em Torre Botoes Manager
     public bool torreEmAndamento;
     public bool torreSelectEmAndamento;
+    public int i;
+    public KeyCode enterButton = KeyCode.C;
 
     private void Start()
     {
@@ -93,8 +98,8 @@ public class TorreManager : MonoBehaviour
     // Rotina de selecao de torre
     public IEnumerator SelecionaTorre()
     {
-        int i = 0;  // Garante que o a lista de torres comece da primeira torre
-        textoMensagem.text = "Aperte Enter para selecionar a torre"; // muda o texto visivel para o jogador
+        i = 0;  // Garante que o a lista de torres comece da primeira torre
+        textoMensagem.text = "Aperte C para confirmar sua escolha"; // muda o texto visivel para o jogador
 
         // inicia a UI de selecao de torre
         torre = listaTorres[i];
@@ -108,21 +113,23 @@ public class TorreManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.RightArrow) && gameObject.GetComponent<TorreManager>().torreSelectEmAndamento)
             {
                 i++;
-                if (i >= listaTorres.Count) i = 0;
             }
 
             if (Input.GetKeyDown(KeyCode.LeftArrow) && gameObject.GetComponent<TorreManager>().torreSelectEmAndamento)
             {
                 i--;
-                if (i < 0) i = listaTorres.Count - 1;
             }
 
+            if (i < 0) i = listaTorres.Count - 1;
+            if (i >= listaTorres.Count) i = 0;
+
             // use o Enter para selecionar a torre que deseja jogar
-            if (Input.GetKeyDown(KeyCode.Return) && gameObject.GetComponent<TorreManager>().torreSelectEmAndamento)
+            if (Input.GetKeyDown(enterButton) && gameObject.GetComponent<TorreManager>().torreSelectEmAndamento)
             {
                 gameObject.GetComponent<TorreManager>().torreSelectEmAndamento = false;
                 FindObjectOfType<AudioManager>().Play("Select Carta");
             }
+
 
             // sempre atualiza a sprite quando o i é alterado independente da quantidade de torres que existam no jogo
             torreImage.sprite = listaTorres[i].imagemTorre;
@@ -138,7 +145,11 @@ public class TorreManager : MonoBehaviour
         torre = listaTorres[i];                    // atribui que a torre iniciada será a escolhida pelo jogador
 
         yield return new WaitForSecondsRealtime(1);// espera um segundo para o jogador poder ler que a torre foi selecionada
+
         torreSelect.SetActive(false);              // desativa a UI de selecao de torre
+        Destroy(torreSelectBotoes);                // Destroy os botoes de troca de torre
+        cartaSelectBotoes.SetActive(true);         // Ativa os botoes de troca de carta
+
         StartCoroutine(FormarTime());              // inicia a rotina de formacao de time
     }
 
@@ -159,7 +170,7 @@ public class TorreManager : MonoBehaviour
             textoMensagem.text = "Escolha o capitao da sua equipe"; // muda o texto visivel para o jogador
 
             // quando o jogador apertar Enter a carta que instanciada é selecionada para ser o capitao
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(enterButton))
             {
                 time.MontaCapitao(Inventory.playerData.inventarioCartas[inventarioManager.i], ScriptableObject.CreateInstance<Equipamento>());
                 recebeuCarta = true; // ao colocar que recebeu carta como true o jogador pode sair do while
@@ -176,12 +187,20 @@ public class TorreManager : MonoBehaviour
             textoMensagem.text = "Escolha o membro " + i + " da sua equipe"; // muda o texto visivel para o jogador
 
             // Sempre que apertar Enter manda uma carta para o formador de membro, até que sejam mandados os ultimos 3 membros da equipe
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(enterButton))
             {
-                time.MontaMembro(Inventory.playerData.inventarioCartas[inventarioManager.i], ScriptableObject.CreateInstance<Equipamento>());
-                i++;
+                if (Inventory.playerData.inventarioCartas[inventarioManager.i] == time.capitao.dataCarta || Inventory.playerData.inventarioCartas[inventarioManager.i] == time.membro1.dataCarta || Inventory.playerData.inventarioCartas[inventarioManager.i] == time.membro2.dataCarta)
+                {
+                    textoMensagem.text = "Esta carta já foi escolhida";
+                    yield return new WaitForSecondsRealtime(0.5f);
+                }
+                else
+                {
+                    time.MontaMembro(Inventory.playerData.inventarioCartas[inventarioManager.i], ScriptableObject.CreateInstance<Equipamento>());
+                    i++;
 
-                FindObjectOfType<AudioManager>().Play("Select Carta");
+                    FindObjectOfType<AudioManager>().Play("Select Carta");
+                }
             }
 
             // todos os membros do time instanciados entao pode sair do While
@@ -207,6 +226,8 @@ public class TorreManager : MonoBehaviour
 
         // Inicia de fato a torre
         IniciaTorre();
+
+        Destroy(cartaSelectBotoes);
 
         yield break;
     }

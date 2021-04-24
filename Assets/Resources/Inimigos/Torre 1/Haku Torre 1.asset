@@ -16,7 +16,7 @@ MonoBehaviour:
   descricao: 
   exp: 120
   arte: {fileID: 21300000, guid: f4063dbfa26a70c40bd9cfebf970af32, type: 3}
-  dano: 100
+  dano: 200
   vida: 2000
   cura: 0
   multNin: 1

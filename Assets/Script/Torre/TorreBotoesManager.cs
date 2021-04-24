@@ -33,4 +33,26 @@ public class TorreBotoesManager : MonoBehaviour
             MenuManager.LoadMenuScene();
         }
     }
+
+    public void ProximaCartaTorre()
+    {
+        gameObject.GetComponent<TorreManager>().inventarioManager.ProximaCartaGeral();
+    }
+
+    public void CartaAnterioraTorre()
+    {
+        gameObject.GetComponent<TorreManager>().inventarioManager.CartaAnteriorGeral();
+    }
+
+    public void ProxTorre()
+    {
+        gameObject.GetComponent<TorreManager>().i++;
+
+    }
+
+    public void TorreAnteriora()
+    {
+        gameObject.GetComponent<TorreManager>().i--;
+
+    }
 }

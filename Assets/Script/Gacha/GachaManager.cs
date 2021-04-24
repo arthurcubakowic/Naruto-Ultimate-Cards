@@ -70,10 +70,15 @@ public class GachaManager : MonoBehaviour
         }
         
         // Essa parte serve para Debugar, mas atrapalha na jogabilidade do jogo
-        /*if (Input.GetKeyDown(KeyCode.F3))
+        if (Input.GetKeyDown(KeyCode.F3))
         {
             Inventory.playerData.currency[0] += 10000;
-        }*/
+            Inventory.playerData.currency[1] += 10000;
+            Inventory.playerData.currency[2] += 10000;
+            Inventory.playerData.currency[3] += 10000;
+            Inventory.playerData.currency[4] += 10000;
+            Inventory.playerData.currency[5] += 10000;
+        }
     }
 
     // Cria a carta e adiciona ela ao inventario do jogador

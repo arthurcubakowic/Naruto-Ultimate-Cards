@@ -71,5 +71,11 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("Torre");
     }
 
+    public static void FechaJogo()
+    {
+        Inventory.SaveGame();
+        Application.Quit();
+    }
+
 
 }

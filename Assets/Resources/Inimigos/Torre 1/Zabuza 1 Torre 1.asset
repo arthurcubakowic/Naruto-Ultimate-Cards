@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Zabuza Momochi
   descricao: Primeiro Encontro
-  exp: 100
+  exp: 150
   arte: {fileID: 21300000, guid: ed75b600539766646b0bf281508e5c48, type: 3}
   dano: 100
   vida: 1600

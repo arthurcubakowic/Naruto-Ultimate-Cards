@@ -192,6 +192,8 @@ public class Inventory : MonoBehaviour
                 AddCarta(Resources.Load<Card>("Cartas/310"));
                 AddCarta(Resources.Load<Card>("Cartas/2301"));
 
+                SaveGame();
+
                 return playerData;
             }
 
