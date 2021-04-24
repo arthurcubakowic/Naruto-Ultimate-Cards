@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Oboro
   descricao: Genin de Amagakure
-  exp: 185
+  exp: 80
   arte: {fileID: 21300000, guid: f16171a1090336a4fa582d15d2f931ca, type: 3}
-  dano: 250
-  vida: 3200
+  dano: 400
+  vida: 5500
   cura: 0
   multNin: 0
   multGen: 0

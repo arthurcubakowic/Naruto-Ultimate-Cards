@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Time Oboro
   descricao: Trio de Amegakure
-  exp: 250
+  exp: 200
   arte: {fileID: 21300000, guid: 5f2081e5c21c1394b97af33904f1ca59, type: 3}
-  dano: 500
-  vida: 4000
-  cura: 500
+  dano: 550
+  vida: 11000
+  cura: 0
   multNin: 0
   multGen: 0
   multTai: 0
-  probabilidadeHeal: 15
+  probabilidadeHeal: 0

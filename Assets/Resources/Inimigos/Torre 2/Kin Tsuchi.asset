@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Kin Tsuchi
   descricao: Ninja do Som
-  exp: 200
+  exp: 110
   arte: {fileID: 21300000, guid: 8a7774fd12edd1844af2415a2d7e6d8c, type: 3}
-  dano: 400
-  vida: 3800
+  dano: 450
+  vida: 7000
   cura: 0
   multNin: 0
   multGen: 0

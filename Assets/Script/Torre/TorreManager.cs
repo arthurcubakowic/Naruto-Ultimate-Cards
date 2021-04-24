@@ -37,6 +37,7 @@ public class TorreManager : MonoBehaviour
     // Player UI
     public GameObject playerUI;
     public Text vidaPlayerUI;
+    public Text contadorCura;
 
     // UI Geral
     public GameObject caixaMensagem;
@@ -393,6 +394,7 @@ public class TorreManager : MonoBehaviour
     {
         vidaInimigoUI.text = "Vida: " + vidaInimigo.ToString() + "/" + inimigo.vida;
         vidaPlayerUI.text = "Vida: " + vidaPlayer.ToString() + "/" + time.poderT;
+        contadorCura.text = gameObject.GetComponent<CombateTorre>().contadorCuras + " / 10";
     }
 
     // Aplica uma acao, essa funcao aplica tanto ataque quanto cura

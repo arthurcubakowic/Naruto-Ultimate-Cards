@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Orochimaru
   descricao: Invasor do Exame
-  exp: 200
+  exp: 150
   arte: {fileID: 21300000, guid: f6cf2a8175f4b9645af66ab2e470e11f, type: 3}
-  dano: 450
-  vida: 4000
+  dano: 500
+  vida: 8000
   cura: 0
   multNin: 0
   multGen: 0

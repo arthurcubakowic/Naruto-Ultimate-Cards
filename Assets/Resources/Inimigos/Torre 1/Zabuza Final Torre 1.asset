@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Zabuza Momochi
   descricao: Demonio do Gas Oculto
-  exp: 500
+  exp: 80
   arte: {fileID: 21300000, guid: f9232b901c71ae343b2a234b96f90448, type: 3}
-  dano: 400
-  vida: 2500
+  dano: 300
+  vida: 4000
   cura: 0
   multNin: 0
   multGen: 0

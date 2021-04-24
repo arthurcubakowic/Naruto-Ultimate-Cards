@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Kakashi Hatake
   descricao: Exame Genin
-  exp: 50
+  exp: 35
   arte: {fileID: 21300000, guid: b6ded29fc85c7334b9d00ba5919c7574, type: 3}
-  dano: 400
-  vida: 1500
-  cura: 100
+  dano: 150
+  vida: 2000
+  cura: 0
   multNin: 1
   multGen: 1
   multTai: 1
-  probabilidadeHeal: 10
+  probabilidadeHeal: 0

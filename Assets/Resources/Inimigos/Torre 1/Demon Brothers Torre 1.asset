@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Demon Brothers
   descricao: "Assassinos da N\xE9voa"
-  exp: 80
+  exp: 40
   arte: {fileID: 21300000, guid: b396d78c3efdc1d4b83e8af6e714224c, type: 3}
-  dano: 100
-  vida: 1200
+  dano: 200
+  vida: 2500
   cura: 0
   multNin: 1
   multGen: 1

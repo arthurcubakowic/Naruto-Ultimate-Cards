@@ -17,8 +17,11 @@ public class CombateTorre : MonoBehaviour
 {
     TorreManager torreManager;
 
+    public int contadorCuras;
+
     private void Start()
     {
+        contadorCuras = 0;
         torreManager = gameObject.GetComponent<TorreManager>();
     }
 
@@ -33,7 +36,11 @@ public class CombateTorre : MonoBehaviour
     //Cura os membros da equipe e o inimigo realiza uma ação
     public void CuraPlayer()
     {
-        torreManager.AplicaAcao(-torreManager.time.ninjutsuSupT, AcaoInimigo());
+        if (contadorCuras < 10)
+        {
+            contadorCuras++;
+            torreManager.AplicaAcao(-torreManager.time.ninjutsuSupT, AcaoInimigo());
+        }
     }
 
     //Define se a ação do inimigo vai ser causar dano à equipe ou se curar

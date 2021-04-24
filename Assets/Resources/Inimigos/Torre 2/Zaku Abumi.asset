@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Zaku Abumi
   descricao: Ninja do Som
-  exp: 205
+  exp: 110
   arte: {fileID: 21300000, guid: 7cc571311e079a640b0dccf96eb770e5, type: 3}
-  dano: 480
-  vida: 3850
+  dano: 550
+  vida: 6000
   cura: 0
   multNin: 0
   multGen: 0

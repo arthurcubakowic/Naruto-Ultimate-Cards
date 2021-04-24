@@ -38,7 +38,7 @@ public class TorreBotoesManager : MonoBehaviour
         }
 
         // Troca para a cena do menu caso clique no backspace
-        if (Input.GetKeyDown(KeyCode.Backspace) && !gameObject.GetComponent<TorreManager>().torreEmAndamento)
+        if (Input.GetKeyDown(KeyCode.Escape) && !gameObject.GetComponent<TorreManager>().torreEmAndamento)
         {
             MenuManager.LoadMenuScene();
         }

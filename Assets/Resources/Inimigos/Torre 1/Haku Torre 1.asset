@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Haku
   descricao: 
-  exp: 120
+  exp: 50
   arte: {fileID: 21300000, guid: f4063dbfa26a70c40bd9cfebf970af32, type: 3}
-  dano: 200
-  vida: 2000
+  dano: 250
+  vida: 3000
   cura: 0
   multNin: 1
   multGen: 1
